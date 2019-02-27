@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { TriviaGameComponent } from './trivia-game/trivia-game.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
