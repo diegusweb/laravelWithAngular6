@@ -11,7 +11,7 @@ class PlayerController extends Controller
 {
     public function index()
     {
-        return new PlayerCollection(Player::all());
+        return Player::all();
     }
 
     public function show($id)
