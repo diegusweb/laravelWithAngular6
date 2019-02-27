@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { TriviaGameComponent } from './trivia-game/trivia-game.component';
 
 import { Routes, RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from "@angular/common/http";
+import { PlayerService } from './player.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -22,10 +23,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

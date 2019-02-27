@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
+import { Player } from '../model/player.model';
 
 @Component({
   selector: 'app-trivia-game',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TriviaGameComponent implements OnInit {
 
-  constructor() { }
+  players: Player[];
+  errorMessage: string;
+
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
+    this.getPlayers();
+  }
+
+  getPlayers() {
+    this.playerService
+        .getPlayers()
+        .subscribe( data => {
+          this.players = data;
+          console.log(this.players);
+        });
   }
 
 }
