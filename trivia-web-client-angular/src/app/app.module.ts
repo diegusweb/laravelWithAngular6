@@ -8,6 +8,7 @@ import { TriviaGameComponent } from './trivia-game/trivia-game.component';
 import { Routes, RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { PlayerService } from './player.service';
+import { PlayerFormComponent } from './player-form/player-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    TriviaGameComponent
+    TriviaGameComponent,
+    PlayerFormComponent
   ],
   imports: [
     BrowserModule,

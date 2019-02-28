@@ -15,4 +15,20 @@ export class PlayerService {
   getPlayers() {
     return this.http.get<Player[]>(API_URL+ '/players');
   } 
+
+  getPlayerById(id: number){
+    return this.http.get<Player>(API_URL+'/'+id);
+  }
+
+  addPlayer(player: Player){
+    return this.http.post(API_URL+'/api/players', player);
+  }
+
+  updatePlayer(player: Player){
+    return this.http.put(API_URL+'/'+player.id, player);
+  }
+
+  deletePlayer(id: number){
+    return this.http.delete(API_URL+'/api/players'+id);
+  }
 }
