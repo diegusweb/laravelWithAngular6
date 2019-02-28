@@ -20,8 +20,8 @@ export class PlayerService {
     return this.http.get<Player>(API_URL+'/'+id);
   }
 
-  addPlayer(player: Player){
-    return this.http.post(API_URL+'/api/players', player);
+  addPlayer(name){
+    return this.http.post(API_URL+'/players', name);
   }
 
   updatePlayer(player: Player){
@@ -29,6 +29,6 @@ export class PlayerService {
   }
 
   deletePlayer(id: number){
-    return this.http.delete(API_URL+'/api/players'+id);
+    return this.http.delete(API_URL+'/players/'+id);
   }
 }

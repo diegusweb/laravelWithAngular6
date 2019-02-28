@@ -38,6 +38,20 @@ export class TriviaGameComponent implements OnInit {
     return this.players.find(player => player.id === id);
   }
 
+  appendPlayer(player: Player){
+    this.players.push(player);
+  }
 
+  deletePlayer(id) {
+    let player = this.findPlayer(id);
+    this.playerService
+    .deletePlayer(id)
+    .subscribe(
+      response => {
+        let index = this.players.findIndex(player => player.id === id)
+        this.players.splice(index, 1);
+      }
+    )
+  }
 
 }
